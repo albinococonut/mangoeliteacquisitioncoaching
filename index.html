@@ -797,6 +797,225 @@
             margin-top: 40px;
         }
 
+        /* BONUS SCALING SECTION */
+.bonus-scaling-section {
+    background: var(--gray-100);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Split layout with emphasis on testimonial */
+.split-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    min-height: 600px;
+}
+
+.content-left {
+    background: var(--gray-100);
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.testimonial-right {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background pattern */
+.testimonial-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,179,0,0.08)" stroke-width="0.5"/></svg>');
+    background-size: 120px 120px;
+}
+
+/* BONUS badge - much more prominent */
+.bonus-badge {
+    background: var(--primary);
+    color: var(--gold);
+    padding: 16px 32px;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: inline-block;
+    margin-bottom: 30px;
+    width: fit-content;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.bonus-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid var(--primary);
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+
+/* FREE emphasis in headline */
+.hero-headline {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.0;
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+.free-highlight {
+    color: var(--gold);
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-subline {
+    font-size: 1.4rem;
+    color: var(--gray-700);
+    margin-bottom: 40px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Simplified benefits - only 3 key points */
+.key-benefits {
+    margin: 40px 0;
+}
+
+.benefit-item {
+    margin-bottom: 25px;
+    padding-left: 35px;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+}
+
+.benefit-item::after {
+    content: '→';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+/* TESTIMONIAL - now the star of the show */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-xl);
+}
+
+        /* Massive emphasis on the result */
+.amount-badge {
+    background: var(--gold);
+    color: var(--primary);
+    padding: 20px 30px;
+    border-radius: 0;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    display: block;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-md);
+}
+
+.amount-badge::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--gold);
+}
+
+.testimonial-text {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--gray-700);
+}
+
+.testimonial-author {
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+/* Urgency element */
+.urgency-strip {
+    background: var(--accent);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: urgent-pulse 2s infinite;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid var(--gold);
+}
+
         .benefit-category {
             background: rgba(255, 255, 255, 0.05);
             padding: 30px;
@@ -1256,6 +1475,38 @@
             header {
                 padding: 80px 0 100px;
             }
+            /* Add to existing @media (max-width: 768px) section */
+.split-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.testimonial-right {
+    order: 1;
+    padding: 60px 30px;
+}
+
+.content-left {
+    order: 2;
+    padding: 60px 30px;
+}
+
+.hero-headline {
+    font-size: 2.5rem;
+}
+
+.free-highlight {
+    font-size: 3rem;
+}
+
+.amount-badge {
+    font-size: 1.4rem;
+    padding: 15px 20px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+}
         }
 
         @media (max-width: 480px) {
@@ -1588,7 +1839,38 @@
                         <span class="portfolio-stat-label">ROI</span>
                     </div>
                 </div>
+ </div>
+        </div>
+    </div>
+
+    <!-- BONUS SCALING SECTION -->
+    <div class="bonus-scaling-section">
+        <div class="split-layout">
+            <div class="content-left">
+                <div class="bonus-badge">BONUS</div>
+                <h1 class="hero-headline">
+                    <span class="free-highlight">GET OUR $17M<br>SCALING SYSTEM FREE</span>
+                </h1>
+                <p class="hero-subline">Complete your first acquisition and immediately unlock our proven scaling program — no additional cost</p>
+                
+                <div class="key-benefits">
+                    <div class="benefit-item">Monthly strategy sessions with the founders who built $17.57M across 7 acquisitions</div>
+                    <div class="benefit-item">Private 1-on-1 calls when critical decisions arise</div>
+                    <div class="benefit-item">Same systems that generated 24.2x ROI while working minimal hours</div>
+                </div>
             </div>
+            
+            <div class="testimonial-right">
+                <div class="testimonial-card">
+                    <div class="amount-badge">$220,000 in 7 weeks</div>
+                    <p class="testimonial-text">"They rolled up their sleeves and helped us make smart, fast changes that moved the needle. Super sharp team, real-world advice, and crazy fast ROI."</p>
+                    <div class="testimonial-author">— Alex Kahn, Rio Grande Automotive</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="urgency-strip">
+            Only 1 spot remaining for Q3 2025 - Apply Below
         </div>
     </div>
 
